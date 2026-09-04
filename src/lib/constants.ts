@@ -2,7 +2,7 @@ export const SITE_NAME = "CompressKit";
 export const SITE_TAGLINE =
   "Compress, resize and convert your images in seconds.";
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://getcompresskit.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://getcompresskit.vercel.app";
 
 export const MAX_FILE_SIZE_BYTES = 20 * 1024 * 1024; // 20MB
 export const MAX_FILES = 30;

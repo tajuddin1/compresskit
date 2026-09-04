@@ -21,7 +21,7 @@ const categories: ToolItem["category"][] = [
 export default function ToolsPage() {
   return (
     <div className="pb-20">
-      <div className="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
+      <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-6">
         <Breadcrumbs
           items={[{ label: "Home", href: "/" }, { label: "Tools" }]}
         />
@@ -38,7 +38,7 @@ export default function ToolsPage() {
         <AdBanner />
       </div>
 
-      <div className="mx-auto mt-12 max-w-6xl space-y-14 px-4 sm:px-6">
+      <div className="mx-auto mt-12 max-w-7xl space-y-14 px-4 sm:px-6">
         {categories.map((category) => {
           const items = tools.filter((tool) => tool.category === category);
           return (

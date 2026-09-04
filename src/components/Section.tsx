@@ -8,7 +8,7 @@ interface SectionProps {
 
 export function Section({ children, className = "", id }: SectionProps) {
   return (
-    <section id={id} className={`mx-auto max-w-6xl px-4 sm:px-6 ${className}`}>
+    <section id={id} className={`mx-auto max-w-7xl px-4 sm:px-6 ${className}`}>
       {children}
     </section>
   );
@@ -22,7 +22,7 @@ export function Container({
   className?: string;
 }) {
   return (
-    <div className={`mx-auto max-w-6xl px-4 sm:px-6 ${className}`}>
+    <div className={`mx-auto max-w-7xl px-4 sm:px-6 ${className}`}>
       {children}
     </div>
   );

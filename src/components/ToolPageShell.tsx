@@ -45,7 +45,7 @@ export function ToolPageShell({
       />
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <div className="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
+      <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-6">
         <Breadcrumbs items={breadcrumbs} />
         <h1 className="font-display max-w-3xl text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           {title}
@@ -59,7 +59,7 @@ export function ToolPageShell({
         <AdBanner />
       </div>
 
-      <div className="mx-auto mt-8 grid max-w-6xl gap-8 px-4 lg:grid-cols-[minmax(0,1fr)_280px] sm:px-6">
+      <div className="mx-auto mt-8 grid max-w-7xl gap-8 px-4 lg:grid-cols-[minmax(0,1fr)_280px] sm:px-6">
         <div className="min-w-0">{tool}</div>
         <aside className="space-y-6">
           <AdRectangle />
