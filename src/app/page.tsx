@@ -83,7 +83,7 @@ export default function HomePage() {
       <JsonLd data={faqJsonLd(homepageFaqs)} />
 
       <section className="hero-wash relative overflow-hidden border-b border-border">
-        <div className="mx-auto max-w-6xl px-4 pt-16 pb-12 sm:px-6 sm:pt-20">
+        <div className="mx-auto max-w-7xl px-4 pt-16 pb-12 sm:px-6 sm:pt-20">
           <div className="mx-auto max-w-3xl text-center">
             <span className="inline-flex items-center rounded-full border border-border bg-white px-3 py-1 text-xs font-semibold tracking-wide text-primary shadow-sm">
               100% Free • No Signup Required
@@ -117,7 +117,7 @@ export default function HomePage() {
         <AdBanner />
       </div>
 
-      <section id="compressor" className="mx-auto mt-10 max-w-6xl px-4 sm:px-6">
+      <section id="compressor" className="mx-auto mt-10 max-w-7xl px-4 sm:px-6">
         <ImageCompressor />
       </section>
 
@@ -125,7 +125,7 @@ export default function HomePage() {
         <AdBanner />
       </div>
 
-      <section className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+      <section className="mx-auto mt-20 max-w-7xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl font-bold tracking-tight">
             Why CompressKit?
@@ -151,7 +151,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+      <section className="mx-auto mt-20 max-w-7xl px-4 sm:px-6">
         <h2 className="font-display text-3xl font-bold tracking-tight">
           Supported Formats
         </h2>
@@ -179,7 +179,7 @@ export default function HomePage() {
         </p>
       </section>
 
-      <section id="how-it-works" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+      <section id="how-it-works" className="mx-auto mt-20 max-w-7xl px-4 sm:px-6">
         <h2 className="font-display text-3xl font-bold tracking-tight">
           How It Works
         </h2>
@@ -204,7 +204,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+      <section className="mx-auto mt-20 max-w-7xl px-4 sm:px-6">
         <div className="flex items-end justify-between gap-4">
           <div>
             <h2 className="font-display text-3xl font-bold tracking-tight">

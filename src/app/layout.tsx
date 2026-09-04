@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     ],
   }),
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://getcompresskit.com",
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://getcompresskit.vercel.app",
   ),
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME }],
