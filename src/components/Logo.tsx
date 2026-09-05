@@ -2,57 +2,57 @@ import Link from "next/link";
 
 interface LogoProps {
   className?: string;
-  showText?: boolean;
 }
 
-export function Logo({ className = "", showText = true }: LogoProps) {
+/**
+ * Brand monogram: open “C” with double compress chevrons in the letter opening.
+ * Drawn as a custom mark — not a UI/icon-set glyph.
+ */
+function Monogram({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M34 12a16.5 16.5 0 1 0 0 24"
+        stroke="currentColor"
+        strokeWidth="7"
+        strokeLinecap="round"
+      />
+      <path
+        d="M27.5 17.5 21 24l6.5 6.5"
+        stroke="currentColor"
+        strokeWidth="4.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M34.5 20.5 30 24l4.5 3.5"
+        stroke="currentColor"
+        strokeWidth="4.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function Logo({ className = "" }: LogoProps) {
   return (
     <Link
       href="/"
-      className={`inline-flex items-center gap-2.5 text-foreground transition-opacity hover:opacity-80 ${className}`}
+      className={`group inline-flex items-center gap-2.5 ${className}`}
       aria-label="CompressKit home"
     >
-      <span className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white shadow-sm">
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          aria-hidden="true"
-        >
-          <rect
-            x="4"
-            y="3"
-            width="12"
-            height="14"
-            rx="2"
-            stroke="currentColor"
-            strokeWidth="1.8"
-          />
-          <path
-            d="M9 9h6M9 12h4"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-          />
-          <path
-            d="M16 14.5c2.2 0 4 1.2 4 3.25S18.2 21 16 21s-4-1.2-4-3.25 1.8-3.25 4-3.25Z"
-            fill="currentColor"
-            opacity="0.95"
-          />
-          <path
-            d="M16 16.2v2.2M14.9 17.8h2.2"
-            stroke="var(--primary)"
-            strokeWidth="1.4"
-            strokeLinecap="round"
-          />
-        </svg>
+      <Monogram className="h-8 w-8 shrink-0 text-primary transition-opacity group-hover:opacity-85 sm:h-[34px] sm:w-[34px]" />
+      <span className="font-logo text-[1.28rem] font-extrabold leading-none tracking-[-0.035em] sm:text-[1.38rem]">
+        <span className="text-foreground">Compress</span>
+        <span className="text-primary">Kit</span>
       </span>
-      {showText ? (
-        <span className="font-display text-lg font-semibold tracking-tight">
-          CompressKit
-        </span>
-      ) : null}
     </Link>
   );
 }

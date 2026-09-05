@@ -16,34 +16,50 @@ export default function OpenGraphImage() {
           justifyContent: "center",
           padding: 80,
           background: "linear-gradient(135deg, #f0fdfa 0%, #ffffff 55%, #ecfeff 100%)",
-          color: "#0f172a",
+          color: "#09090b",
         }}
       >
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 16,
+            gap: 18,
             marginBottom: 28,
           }}
         >
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <path
+              d="M34 12a16.5 16.5 0 1 0 0 24"
+              stroke="#0d9488"
+              strokeWidth="7"
+              strokeLinecap="round"
+            />
+            <path
+              d="M27.5 17.5 21 24l6.5 6.5"
+              stroke="#0d9488"
+              strokeWidth="4.25"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M34.5 20.5 30 24l4.5 3.5"
+              stroke="#0d9488"
+              strokeWidth="4.25"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
           <div
             style={{
-              width: 56,
-              height: 56,
-              borderRadius: 14,
-              background: "#0f766e",
-              color: "white",
               display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 28,
-              fontWeight: 700,
+              fontSize: 40,
+              fontWeight: 800,
+              letterSpacing: -1.5,
             }}
           >
-            C
+            <span style={{ color: "#09090b" }}>Compress</span>
+            <span style={{ color: "#0d9488" }}>Kit</span>
           </div>
-          <div style={{ fontSize: 36, fontWeight: 700 }}>CompressKit</div>
         </div>
         <div
           style={{
