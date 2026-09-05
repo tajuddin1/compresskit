@@ -8,14 +8,16 @@ import {
   WandSparkles,
   ImageIcon,
   FileImage,
+  ArrowRight,
 } from "lucide-react";
 import { ImageCompressor } from "@/components/ImageCompressor";
-import { FAQ } from "@/components/FAQ";
+import { FAQ, FaqCta } from "@/components/FAQ";
 import { ToolCard } from "@/components/ToolCard";
 import { AdBanner } from "@/components/ads/AdComponents";
 import { JsonLd } from "@/components/JsonLd";
 import { homepageFaqs } from "@/data/faq";
 import { tools } from "@/data/tools";
+import { getAllPosts } from "@/lib/blog";
 import { createPageMetadata, faqJsonLd } from "@/lib/seo";
 import { SITE_NAME } from "@/lib/constants";
 
@@ -78,6 +80,8 @@ const steps = [
 ];
 
 export default function HomePage() {
+  const latestPosts = getAllPosts().slice(0, 3);
+
   return (
     <div className="pb-20">
       <JsonLd data={faqJsonLd(homepageFaqs)} />
@@ -225,12 +229,74 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="mx-auto mt-20 max-w-7xl px-4 sm:px-6">
+        <div className="flex items-end justify-between gap-4">
+          <div>
+            <h2 className="font-display text-3xl font-bold tracking-tight">
+              From the blog
+            </h2>
+            <p className="mt-3 text-muted">
+              Guides that help you compress smarter and keep pages fast.
+            </p>
+          </div>
+          <Link
+            href="/blog"
+            className="hidden text-sm font-semibold text-primary sm:inline-flex sm:items-center sm:gap-1"
+          >
+            View all posts
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {latestPosts.map((post) => (
+            <article
+              key={post.slug}
+              className="flex h-full flex-col rounded-2xl border border-border bg-white p-5 shadow-soft transition hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md"
+            >
+              <p className="text-xs font-medium text-zinc-500">
+                {post.date} · {post.readingTime}
+              </p>
+              <h3 className="mt-2 text-lg font-semibold tracking-tight">
+                <Link href={`/blog/${post.slug}`} className="hover:text-primary">
+                  {post.title}
+                </Link>
+              </h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+                {post.description}
+              </p>
+              <Link
+                href={`/blog/${post.slug}`}
+                className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary"
+              >
+                Read guide
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </article>
+          ))}
+        </div>
+        <div className="mt-6 sm:hidden">
+          <Link href="/blog" className="text-sm font-semibold text-primary">
+            View all posts →
+          </Link>
+        </div>
+      </section>
+
       <div className="mt-16">
         <AdBanner />
       </div>
 
-      <section className="mx-auto mt-16 max-w-3xl px-4 sm:px-6">
+      <section className="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
         <FAQ items={homepageFaqs} />
+        <div className="mt-8">
+          <FaqCta />
+        </div>
+        <p className="mt-4 text-center text-sm text-muted">
+          Need more detail? Visit the full{" "}
+          <Link href="/faq" className="font-medium text-primary hover:underline">
+            FAQ page
+          </Link>
+          .
+        </p>
       </section>
     </div>
   );

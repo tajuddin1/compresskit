@@ -3,58 +3,196 @@ export interface FaqItem {
   answer: string;
 }
 
+export interface FaqCategory {
+  id: string;
+  title: string;
+  description: string;
+  items: FaqItem[];
+}
+
 export const homepageFaqs: FaqItem[] = [
   {
     question: "Is CompressKit free to use?",
     answer:
-      "Yes. CompressKit is free to use with no account, no email signup and no upload limits beyond the per-file size limit.",
+      "Yes. CompressKit is completely free. There is no account, no email signup and no paid plan required to compress, resize or convert images.",
   },
   {
     question: "Are my images uploaded to a server?",
     answer:
-      "No. Image compression, resizing and conversion run directly in your browser. Your files stay on your device.",
+      "No. Compression, resizing and conversion run directly in your browser. Your files stay on your device and are not uploaded to CompressKit servers.",
   },
   {
     question: "Which image formats are supported?",
     answer:
-      "CompressKit currently supports JPG, PNG and WebP. Additional formats may be added later based on browser support.",
+      "JPG, PNG and WebP are fully supported. You can compress, resize and convert between these formats in the current version.",
   },
   {
     question: "Will compressing an image reduce quality?",
     answer:
-      "Compression can reduce quality depending on the settings you choose. Balanced and High Quality presets keep most images looking sharp while still reducing file size.",
+      "It can, depending on your settings. High Quality and Balanced presets keep most images looking sharp while still reducing file size. Always preview before downloading.",
   },
   {
     question: "Can I compress multiple images at once?",
     answer:
-      "Yes. Upload several images, compress them together and download them individually or as a ZIP file.",
+      "Yes. Upload several images, compress them together, then download files one by one or as a ZIP.",
   },
   {
     question: "Can I compress an image to 100KB or 200KB?",
     answer:
-      "Yes. Use the target size tools or presets. Exact sizes are not always possible because results depend on the image content, but CompressKit aims to get close.",
+      "Yes. Use the target-size tools or presets. Exact sizes are not always possible because results depend on image content, but CompressKit aims to get close and shows the real result.",
   },
   {
     question: "Do I need to install software?",
     answer:
-      "No. CompressKit runs in your browser on desktop and mobile. There is nothing to install.",
+      "No. Everything runs in your browser on desktop and mobile. There is nothing to install.",
   },
   {
     question: "Does CompressKit work on phones?",
     answer:
-      "Yes. The tools are designed to work well on iPhone, Android, tablets and desktop browsers.",
+      "Yes. The tools work on iPhone, Android, tablets and desktop browsers with a mobile-friendly interface.",
   },
   {
     question: "What is the maximum file size?",
     answer:
-      "Each image can be up to 20MB. This keeps processing responsive in the browser while covering most everyday photos and graphics.",
+      "Each image can be up to 20MB. That covers most everyday photos while keeping browser processing responsive.",
   },
   {
-    question: "How do I add more tools later?",
+    question: "Is CompressKit safe for private photos?",
     answer:
-      "CompressKit is built as a modular tools platform. New utilities can be added as separate pages while reusing the same layout, SEO and upload components.",
+      "Because processing happens on your device, private photos such as resumes, IDs or unpublished product shots never need to leave your browser for compression.",
   },
 ];
+
+export const faqCategories: FaqCategory[] = [
+  {
+    id: "getting-started",
+    title: "Getting started",
+    description: "How CompressKit works and what you need to begin.",
+    items: [
+      {
+        question: "How do I compress an image online?",
+        answer:
+          "Open the Image Compressor, drop or select your file, choose a quality preset or target size, click Compress, then download the result.",
+      },
+      {
+        question: "Do I need an account?",
+        answer:
+          "No. CompressKit does not require signup, login or email verification.",
+      },
+      {
+        question: "Does CompressKit work offline after the page loads?",
+        answer:
+          "Once the page is loaded, image processing happens locally in your browser. An internet connection is only needed to open the website.",
+      },
+      {
+        question: "Can I use CompressKit on mobile?",
+        answer:
+          "Yes. Upload from your phone gallery, compress, and download. The interface is optimized for touch screens.",
+      },
+    ],
+  },
+  {
+    id: "privacy",
+    title: "Privacy & security",
+    description: "Where your files go and how processing works.",
+    items: [
+      {
+        question: "Are my images uploaded to a server?",
+        answer:
+          "No. Files are processed in your browser with the Canvas API. CompressKit does not upload your images for compression.",
+      },
+      {
+        question: "Do you store my images?",
+        answer:
+          "No. There is no image database in the MVP. Previews use temporary browser object URLs that are cleaned up when you reset or leave the tool.",
+      },
+      {
+        question: "Is it safe for documents and resume photos?",
+        answer:
+          "Yes for local processing. Since files stay on your device during compression, it is a practical option for sensitive everyday images.",
+      },
+    ],
+  },
+  {
+    id: "quality",
+    title: "Quality & file size",
+    description: "Presets, target sizes and what to expect.",
+    items: [
+      {
+        question: "Which compression preset should I use?",
+        answer:
+          "Start with Balanced for most photos. Use High Quality for portfolios and product shots. Use Maximum Compression when a form needs a very small file.",
+      },
+      {
+        question: "Why isn’t my file exactly 100KB?",
+        answer:
+          "Image content decides how small a file can get. Detailed photos often need more data. CompressKit shows both the target and the actual result.",
+      },
+      {
+        question: "Should I resize before compressing?",
+        answer:
+          "Often yes. If an image will display at 1200px wide, exporting at 4000px only increases size. Resize first, then compress for better results.",
+      },
+      {
+        question: "Does PNG compression keep transparency?",
+        answer:
+          "Yes when you keep PNG as the output format. Converting PNG to JPG removes transparency and fills it with white.",
+      },
+    ],
+  },
+  {
+    id: "formats",
+    title: "Formats & limits",
+    description: "Supported types and upload limits.",
+    items: [
+      {
+        question: "Which formats can I compress?",
+        answer: "JPG, PNG and WebP are supported for compression, resizing and conversion.",
+      },
+      {
+        question: "What is the maximum upload size?",
+        answer:
+          "Up to 20MB per image. This keeps processing smooth in the browser for typical photos and graphics.",
+      },
+      {
+        question: "Can I convert JPG to WebP or PNG to JPG?",
+        answer:
+          "Yes. The Image Converter supports JPG ↔ PNG ↔ WebP in both directions, including multiple files.",
+      },
+      {
+        question: "Is AVIF supported?",
+        answer:
+          "Not in the current MVP. We focused on reliable JPG, PNG and WebP support across modern browsers first.",
+      },
+    ],
+  },
+  {
+    id: "tools",
+    title: "Tools & downloads",
+    description: "Batch processing, ZIP downloads and related utilities.",
+    items: [
+      {
+        question: "Can I download all compressed images as a ZIP?",
+        answer:
+          "Yes. After batch compression, use Download All as ZIP to save everything at once.",
+      },
+      {
+        question: "What other tools are available?",
+        answer:
+          "Besides compression, CompressKit includes Image Resizer, Image Converter and target-size tools for 100KB and 200KB.",
+      },
+      {
+        question: "Will PDF tools be added?",
+        answer:
+          "PDF tools are planned and listed as Coming Soon on the Tools page. Image tools are the focus of the first version.",
+      },
+    ],
+  },
+];
+
+export const siteFaqs: FaqItem[] = faqCategories.flatMap(
+  (category) => category.items,
+);
 
 export const jpgFaqs: FaqItem[] = [
   {
@@ -211,5 +349,3 @@ export const converterFaqs: FaqItem[] = [
     answer: "Yes. Upload several files and convert them in one session.",
   },
 ];
-
-export const siteFaqs: FaqItem[] = homepageFaqs;
