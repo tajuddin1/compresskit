@@ -9,7 +9,7 @@ export const metadata = createPageMetadata({
 
 export default function TermsPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 pt-10 pb-20 sm:px-6">
+    <div className="mx-auto max-w-7xl px-4 pt-10 pb-20 sm:px-6">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Terms" }]} />
       <h1 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
         Terms of Service

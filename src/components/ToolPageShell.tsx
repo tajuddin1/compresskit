@@ -85,7 +85,7 @@ export function ToolPageShell({
         </aside>
       </div>
 
-      <div className="mx-auto mt-16 max-w-3xl space-y-12 px-4 sm:px-6">
+      <div className="mx-auto mt-16 max-w-7xl space-y-12 px-4 sm:px-6">
         <div className="prose-blog space-y-10">{children}</div>
         <FAQ items={faqs} />
       </div>
