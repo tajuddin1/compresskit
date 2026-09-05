@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
+import { Plus_Jakarta_Sans, Manrope, Outfit } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Header } from "@/components/Header";
@@ -21,6 +21,13 @@ const display = Manrope({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
+});
+
+const logo = Outfit({
+  variable: "--font-logo",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -52,7 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${display.variable} h-full antialiased`}
+      className={`${sans.variable} ${display.variable} ${logo.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <JsonLd data={organizationJsonLd()} />
